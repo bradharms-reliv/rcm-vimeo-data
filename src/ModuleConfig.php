@@ -11,16 +11,23 @@ use Rcm\VimeoData\Service\VimeoApiFactory;
  */
 class ModuleConfig
 {
+
     /**
      * @return array
      */
     public function __invoke()
     {
         return [
-            static::class => [
-                'apiClientId' => '',
-                'apiClientSecret' => '',
-                'apiClientAccessToken' => '',
+            'components' => [
+                'rcm' => [
+                    'VimeoComponent' => [
+                        'apiClient' => [
+                            'id' => '',
+                            'secret' => '',
+                            'accessToken' => '',
+                        ],
+                    ],
+                ],
             ],
             'dependencies' => [
                 'factories' => [
